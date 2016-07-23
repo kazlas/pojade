@@ -589,7 +589,7 @@ class WP_Members {
 		$defaults = array(
 			
 			// Login form.
-			'login_heading'        => __( 'Existing Users Log In', 'wp-members' ),
+			'login_heading'        => __( '', 'wp-members' ),
 			'login_username'       => __( 'Username' ),
 			'login_password'       => __( 'Password' ),
 			'login_button'         => __( 'Log In' ),
