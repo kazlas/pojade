@@ -9,8 +9,8 @@ $userData = pojade_addUser ( USER_EMAIL_ADDRESS );
 
 $categories = pojade_addUserAccess ( $userData->ID );
 
-echo "\nCategories for user id: " .  $userData->ID;
-print_r ( $categories );
+echo "\nCategories for user id: " .  $userData->ID . "\n";
+print_r ( $categories[1]->getFullUsers() );
 
 /**
  * Add user
@@ -40,13 +40,15 @@ function pojade_addUser($email_address) {
  */
 function pojade_addUserAccess($userId, $accessCategoryId = null) {
 	$aUserGroupsForObject = array ();
-	$sObjectType = 'user';
 	
 	$oUserAccessManager = new UserAccessManager ();
 	if (isset ( $userId )) {
-		$aUserGroupsForObject = $oUserAccessManager->getAccessHandler ()->getUserGroupsForObject ( $sObjectType, $userId );
+		$aUserGroupsForObject = $oUserAccessManager->getAccessHandler ()->getUserGroupsForObject ( 'user', $userId );
 	}
 	
+	$aUserGroupsForObject->addObject($sObjectType, $iObjectId);
+	
+	$oUserAccessManager->saveUserData($userId);
 	return $aUserGroupsForObject;
 }
 
