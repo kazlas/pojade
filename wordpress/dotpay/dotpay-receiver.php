@@ -9,11 +9,8 @@ $userData = pojade_addUser ( USER_EMAIL_ADDRESS );
 
 $categories = pojade_addUserAccess ( $userData->ID );
 
-echo "\nCategories for user id: " .  $userData->ID . "\n";
-print_r ( $categories[1]->getFullUsers() );
-
 /**
- * Add user
+ * Add user or return existing one
  * Based on: https://tommcfarlin.com/create-a-user-in-wordpress/
  */
 function pojade_addUser($email_address) {
@@ -36,20 +33,31 @@ function pojade_addUser($email_address) {
 }
 
 /**
- * Add user access
+ * Add user access to UAM category
  */
 function pojade_addUserAccess($userId, $accessCategoryId = null) {
 	$aUserGroupsForObject = array ();
 	
 	$oUserAccessManager = new UserAccessManager ();
-	if (isset ( $userId )) {
-		$aUserGroupsForObject = $oUserAccessManager->getAccessHandler ()->getUserGroupsForObject ( 'user', $userId );
+	
+	$oUamAccessHandler = $oUserAccessManager->getAccessHandler ();
+	$aUamUserGroups = $oUamAccessHandler->getUserGroups ();
+	
+	$aAddUserGroups = array ();
+	
+	$sObjectType = 'user';
+	$iObjectId = $userId;
+	
+	foreach ( $aUamUserGroups as $sGroupId => $oUamUserGroup ) {
+		// if (isset($aAddUserGroups[$sGroupId])) {
+		$oUamUserGroup->addObject ( $sObjectType, $iObjectId );
+		// }
+		
+		$blRemoveOldAssignments = false;
+		$oUamUserGroup->save ( $blRemoveOldAssignments );
 	}
 	
-	$aUserGroupsForObject->addObject($sObjectType, $iObjectId);
-	
-	$oUserAccessManager->saveUserData($userId);
-	return $aUserGroupsForObject;
+	// print_r($oUamUserGroup) ;
 }
 
 ?>
