@@ -4,7 +4,6 @@ require_once ('../wp-content/plugins/user-access-manager/user-access-manager.php
 
 // Define allowed server IP to use this script: localhost and Dotpay
 $ALLOWED_IP = array (
-		'::1', //localhost
 		'195.150.9.37' //Dotpay
 );
 
