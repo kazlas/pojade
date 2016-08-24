@@ -2,29 +2,29 @@
 require_once ('../wp-load.php');
 require_once ('../wp-content/plugins/user-access-manager/user-access-manager.php');
 
-// define temp user name
-define ( 'USER_EMAIL_ADDRESS', 'user@localhost.pl' );
+// Define allowed server IP to use this script: localhost and Dotpay
+$ALLOWED_IP = array (
+		'::1', //localhost
+		'195.150.9.37' //Dotpay
+);
 
-// define temp category key
-define ( 'ACCESS_CATEGORY_KEY', 'stapajac_po_wygaszonych_weglach' );
-// define ( 'ACCESS_CATEGORY_KEY', 'lato_w_bergamo' );
-//define ( 'ACCESS_CATEGORY_KEY', 'NONEXISTING' );
+$USER_EMAIL_ADDRESS = $_POST ['email'];
+$ACCESS_CATEGORY_KEY = $_POST ['control'];
 
-$userData = pojade_addUser ( USER_EMAIL_ADDRESS );
-
-$result = pojade_addUserAccess ( $userData->ID, ACCESS_CATEGORY_KEY );
+checkOriginatorIP ( $ALLOWED_IP );
+$userData = pojade_addUser ( $USER_EMAIL_ADDRESS );
+$result = pojade_addUserAccess ( $userData->ID, $ACCESS_CATEGORY_KEY );
 
 if ($result) {
-	echo "ok " . ACCESS_CATEGORY_KEY;
-}
-else echo "NOK";
-
+	echo "OK";
+} else
+	echo "NOK";
 
 /**
  * Add user or return existing one
  * Based on: https://tommcfarlin.com/create-a-user-in-wordpress/
- * 
- * @param string $email_address
+ *
+ * @param string $email_address        	
  * @return WP_User|false
  */
 function pojade_addUser($email_address) {
@@ -48,9 +48,9 @@ function pojade_addUser($email_address) {
 
 /**
  * Add user access to UAM category
- * 
- * @param int $userId
- * @param string $accessCategoryKey
+ *
+ * @param int $userId        	
+ * @param string $accessCategoryKey        	
  * @return boolean if access added
  */
 function pojade_addUserAccess($userId, $accessCategoryKey) {
@@ -74,6 +74,15 @@ function pojade_addUserAccess($userId, $accessCategoryKey) {
 	}
 	
 	return false;
+}
+
+/**
+ * Allow requests only from predefined server IP's
+ */
+function checkOriginatorIP($allowed_server_ip) {
+	if (! in_array ( $_SERVER ['REMOTE_ADDR'], $allowed_server_ip )) {
+		exit ( 'You are not authorized to do this operation!' );
+	}
 }
 
 ?>
