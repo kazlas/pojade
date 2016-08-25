@@ -4,6 +4,7 @@ require_once ('../wp-content/plugins/user-access-manager/user-access-manager.php
 
 // Define allowed server IP to use this script: localhost and Dotpay
 $ALLOWED_IP = array (
+		//'::1', //localhost
 		'195.150.9.37' //Dotpay
 );
 
@@ -32,7 +33,7 @@ function pojade_addUser($email_address) {
 	if (! $user) {
 		// Generate the password and create the user
 		$password = wp_generate_password ( 12, false );
-		$user_id = wp_create_user ( $email_address, $password, $email_address );
+		$user_id = wp_create_user_notoolbar ( $email_address, $password, $email_address );
 		$user = new WP_User ( $user_id );
 		
 		// Set the role empty
@@ -44,6 +45,19 @@ function pojade_addUser($email_address) {
 	
 	return $user;
 }
+
+function wp_create_user_notoolbar ($username, $password, $email = '') {
+	$user_login = wp_slash( $username );
+	$user_email = wp_slash( $email    );
+	$user_pass = $password;
+	$show_admin_bar_front = 'false';
+
+	$userdata = compact('user_login', 'user_email', 'user_pass', 'show_admin_bar_front');
+	print_r($userdata);
+	
+	return wp_insert_user($userdata);
+}
+
 
 /**
  * Add user access to UAM category
