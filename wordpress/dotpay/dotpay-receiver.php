@@ -1,6 +1,7 @@
 <?php
-require_once ('../wp-load.php');
-require_once ('../wp-content/plugins/user-access-manager/user-access-manager.php');
+require_once (__DIR__.'/../wp-load.php');
+require_once (__DIR__.'/../wp-content/plugins/user-access-manager/user-access-manager.php');
+require_once (__DIR__.'/dotpay-get-signature.php');
 
 // Define allowed server IP to use this script: localhost and Dotpay
 $ALLOWED_IP = array (
@@ -12,6 +13,8 @@ $USER_EMAIL_ADDRESS = $_POST ['email'];
 $ACCESS_CATEGORY_KEY = $_POST ['control'];
 
 checkOriginatorIP ( $ALLOWED_IP );
+checkSignature($_POST, USER_PIN);
+
 $userData = pojade_addUser ( $USER_EMAIL_ADDRESS );
 $result = pojade_addUserAccess ( $userData->ID, $ACCESS_CATEGORY_KEY );
 
@@ -97,5 +100,12 @@ function checkOriginatorIP($allowed_server_ip) {
 		exit ( 'You are not authorized to do this operation!' );
 	}
 }
+
+function checkSignature($post, $pin) {
+	if ($post['signature'] != getSignature($pin, $post)) {
+		exit ( 'You are not authorized to do this operation!' );
+	}
+}
+
 
 ?>
