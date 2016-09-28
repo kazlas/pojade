@@ -2,6 +2,8 @@
 require_once (__DIR__.'/../wp-load.php');
 require_once (__DIR__.'/../wp-content/plugins/user-access-manager/user-access-manager.php');
 require_once (__DIR__.'/dotpay-get-signature.php');
+require_once (__DIR__.'/emails/email-new-user.php');
+require_once (__DIR__.'/emails/email-add-access.php');
 
 // Define allowed server IP to use this script: localhost and Dotpay
 $ALLOWED_IP = array (
@@ -16,7 +18,7 @@ checkOriginatorIP ( $ALLOWED_IP );
 checkSignature($_POST, USER_PIN);
 
 $userData = pojade_addUser ( $USER_EMAIL_ADDRESS );
-$result = pojade_addUserAccess ( $userData->ID, $ACCESS_CATEGORY_KEY );
+$result = pojade_addUserAccess ( $userData->ID, $ACCESS_CATEGORY_KEY, $USER_EMAIL_ADDRESS );
 
 if ($result) {
 	echo "OK";
@@ -43,7 +45,7 @@ function pojade_addUser($email_address) {
 		$user->set_role ( '' );
 		
 		// Email the user
-		wp_mail ( $email_address, 'Welcome!', 'Your Password: ' . $password );
+		email_new_user($email_address, $password);
 	}
 	
 	return $user;
@@ -56,20 +58,20 @@ function wp_create_user_notoolbar ($username, $password, $email = '') {
 	$show_admin_bar_front = 'false';
 
 	$userdata = compact('user_login', 'user_email', 'user_pass', 'show_admin_bar_front');
-	print_r($userdata);
 	
 	return wp_insert_user($userdata);
 }
 
 
 /**
- * Add user access to UAM category
+ * Add user access to UAM category. Notify user by e-mail.
  *
  * @param int $userId        	
- * @param string $accessCategoryKey        	
+ * @param string $accessCategoryKey   
+ * @param string $userEmail       	
  * @return boolean if access added
  */
-function pojade_addUserAccess($userId, $accessCategoryKey) {
+function pojade_addUserAccess($userId, $accessCategoryKey, $userEmail) {
 	$oUserAccessManager = new UserAccessManager ();
 	
 	$oUamAccessHandler = $oUserAccessManager->getAccessHandler ();
@@ -79,12 +81,12 @@ function pojade_addUserAccess($userId, $accessCategoryKey) {
 	$iObjectId = $userId;
 	
 	foreach ( $aUamUserGroups as $sGroupId => $oUamUserGroup ) {
-		
 		if ($accessCategoryKey === $oUamUserGroup->getGroupName ()) {
 			$oUamUserGroup->addObject ( $sObjectType, $iObjectId );
 			$blRemoveOldAssignments = false;
 			$oUamUserGroup->save ( $blRemoveOldAssignments );
-			
+
+			email_add_access ($userEmail, $oUamUserGroup->getGroupDesc());
 			return true;
 		}
 	}
