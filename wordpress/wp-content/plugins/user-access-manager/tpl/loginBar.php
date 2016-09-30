@@ -30,15 +30,22 @@ if (!is_single() && !is_page()) {
     $sLoginUrl = get_bloginfo('wpurl').'/wp-login.php';
     $sLoginUrl = apply_filters('uam_login_form_url', $sLoginUrl);
    
-    $sLoginForm = '<form action="'.$sLoginUrl.'" method="post" class="uam_login_form">';
+    $sLoginForm = '<div class="uam_login_form">';
+    $sLoginForm .= '<form action="'.$sLoginUrl.'" method="post" >';
+    $sLoginForm .= '<div class="div_text">';
     $sLoginForm .= '<label class="input_label" for="user_login">'.__('Username:', 'user-access-manager').'</label>';
     $sLoginForm .= '<input name="log" value="'.esc_html(stripslashes($userLogin), 1).'" class="input" id="user_login" type="text" />';
+    $sLoginForm .= '</div>';
+    $sLoginForm .= '<div class="div_text">';
     $sLoginForm .= '<label class="input_label" for="user_pass">'.__('Password:', 'user-access-manager').'</label>';
     $sLoginForm .= '<input name="pwd" class="input" id="user_pass" type="password" />';
+    $sLoginForm .= '</div>';
+    $sLoginForm .= '<div class="button_div">';
     $sLoginForm .= '<input name="rememberme" class="checkbox" id="rememberme" value="forever" type="checkbox" />';
     $sLoginForm .= '<label class="checkbox_label" for="rememberme">'.__('Remember me', 'user-access-manager').'</label>';
     $sLoginForm .= '<input class="button" type="submit" name="wp-submit" id="wp-submit" value="'.__('Login', 'user-access-manager').' &raquo;" />';
     $sLoginForm .= '<input type="hidden" name="redirect_to" value="'.$_SERVER['REQUEST_URI'].'" />';
+    $sLoginForm .= '</div>';
     $sLoginForm .= '</form>';
     $sLoginForm .= '<div class="uam_login_options">';
 
@@ -47,6 +54,7 @@ if (!is_single() && !is_page()) {
     }
     
     $sLoginForm .= '<a href="'.get_bloginfo('wpurl').'/wp-login.php?action=lostpassword" title="'.__('Password Lost and Found', 'user-access-manager').'">'.__('Lost your password?', 'user-access-manager').'</a>';
+    $sLoginForm .= '</div>';
     $sLoginForm .= '</div>';
 
     echo apply_filters('uam_login_form', $sLoginForm);
