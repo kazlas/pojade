@@ -37,9 +37,7 @@
 			<?php endif; ?>
 
 			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'gazette' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'gazette' ), 'WordPress' ); ?></a>
-				<span class="genericon genericon-wordpress sep"></span>
-				<?php printf( __( 'Theme: %1$s by %2$s.', 'gazette' ), 'Gazette', '<a href="https://wordpress.com/themes/" rel="designer">Automattic</a>' ); ?>
+				Prepared by: <a href="<?php echo esc_url( 'http://krawwwiec.pl/'); ?>">kraWWWiec.pl</a>
 			</div><!-- .site-info -->
 		</div><!-- .site-footer-inner -->
 	</footer><!-- #colophon -->

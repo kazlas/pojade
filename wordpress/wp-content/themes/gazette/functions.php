@@ -255,3 +255,14 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load plugin enhancement file to display admin notices.
  */
 require get_template_directory() . '/inc/plugin-enhancements.php';
+
+
+
+/**
+* Replace footer credits for JetPack Inifite Scroll
+**/
+function my_infinite_scroll_credit(){
+    $content = 'Prepared by: <a href="http://krawwwiec.pl">kraWWWiec.pl</a>';
+    return $content;
+}
+add_filter('infinite_scroll_credit','my_infinite_scroll_credit');
