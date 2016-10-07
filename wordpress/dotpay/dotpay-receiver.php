@@ -20,10 +20,8 @@ checkSignature($_POST, USER_PIN);
 $userData = pojade_addUser ( $USER_EMAIL_ADDRESS );
 $result = pojade_addUserAccess ( $userData->ID, $ACCESS_CATEGORY_KEY, $USER_EMAIL_ADDRESS );
 
-if ($result) {
-	echo "OK";
-} else
-	echo "NOK";
+echo "OK";
+
 
 /**
  * Add user or return existing one

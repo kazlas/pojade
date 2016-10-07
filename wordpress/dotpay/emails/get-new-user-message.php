@@ -86,9 +86,7 @@ div.WordSection1
 <p class=MsoNormal><span lang=PL>Serdecznie witamy w gronie Czytelników <a
 href='http://pojade.com.pl/'>pojade.com.pl</a>!</span></p>
 
-<p class=MsoNormal><span lang=PL>Z radością informujemy, że odnotowaliśmy właśnie Twoją pierwszą wpłatę za opis podróży na portalu pojade.com.pl.</span></p>
-
-<p class=MsoNormal><span lang=PL>System utworzył właśnie Twoje konto i wygenerował hasło. </span></p>
+<p class=MsoNormal><span lang=PL>Z radością informujemy, że system utworzył właśnie Twoje konto i wygenerował hasło. </span></p>
 
 <p class=MsoNormal><span lang=PL>&nbsp;</span></p>
 
@@ -154,6 +152,12 @@ jeśli zdecydujesz się na jego zakup.</span></p>
 <p class=MsoNormal><span lang=PL>Redakcja Portalu pojade.com.pl</span></p>
 
 <p class=MsoNormal><span lang=PL>&nbsp;</span></p>
+
+<p class=MsoNormal>
+	<span lang=PL style='mso-ansi-language: PL'>Ta wiadomość została wygenerowana automatycznie. Prosimy na nią nie odpowiadać.
+	<o:p></o:p>
+	</span>
+</p>
 
 <p class=MsoNormal><span lang=PL>&nbsp;</span></p>
 

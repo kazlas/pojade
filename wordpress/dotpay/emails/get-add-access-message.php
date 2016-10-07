@@ -182,7 +182,7 @@ div.WordSection1 {
 		</p>
 
 		<p class=MsoNormal>
-			<span lang=PL style='mso-ansi-language: PL'>Z radością informujemy, że odnotowaliśmy właśnie Twoją wpłatę za opis podróży na portalu pojade.com.pl.<o:p></o:p>
+			<span lang=PL style='mso-ansi-language: PL'>Nasz system właśnie udostępnił Tobie opis podróży na portalu pojade.com.pl.<o:p></o:p>
 			</span>
 		</p>
 
@@ -211,7 +211,7 @@ div.WordSection1 {
 		</p>
 
 		<p class=MsoNormal>
-			<span lang=PL style='mso-ansi-language: PL'>Aby zalogować się i czytać pełne wersje zakupionych opowiadań użyj swojego konta, do którego hasło przesłaliśmy osobną wiadomością e-mail.<o:p></o:p>
+			<span lang=PL style='mso-ansi-language: PL'>Aby zalogować się i czytać pełną wersją opowiadania użyj swojego konta, do którego hasło przesłaliśmy osobną wiadomością e-mail.<o:p></o:p>
 			</span>
 		</p>
 
@@ -220,12 +220,11 @@ div.WordSection1 {
 		</p>
 
 		<p class=MsoNormal>
-			<span lang=PL style='mso-ansi-language: PL'>Pozostałe opowiadania znajdziesz na portalu - zerknij tam czasem, bo planujemy dodać kolejne <span style='color: black'><span
-					class=apple-converted-space>&nbsp;</span></span>
-			</span></span><a href='http://pojade.com.pl/jak-czytac-dalej/#lista'
+			<span lang=PL style='mso-ansi-language: PL'><a href='http://pojade.com.pl/jak-czytac-dalej/#lista'
 				style='font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; word-spacing: 0px'><span
-				lang=PL style='mso-ansi-language: PL'>opowiadania do naszej
-					listy</span></a><span class=apple-converted-space><span lang=PL
+				lang=PL style='mso-ansi-language: PL'>Na naszej liście</span></a> znajdziesz pzostałe opowiadania - zerknij tam czasem, bo planujemy dodać kolejne.<span style='color: black'><span
+					class=apple-converted-space>&nbsp;</span></span>
+			</span></span><span class=apple-converted-space><span lang=PL
 				style='color: black; mso-ansi-language: PL'><span
 					style='font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; float: none; word-spacing: 0px'>.</span></span><span
 				lang=PL style='mso-ansi-language: PL'><o:p></o:p></span>
@@ -259,6 +258,12 @@ div.WordSection1 {
 		<p class=MsoNormal>
 			<span lang=PL style='mso-ansi-language: PL'>&nbsp;<o:p></o:p></span>
 		</p>
+
+<p class=MsoNormal>
+	<span lang=PL style='mso-ansi-language: PL'>Ta wiadomość została wygenerowana automatycznie. Prosimy na nią nie odpowiadać.
+	<o:p></o:p>
+	</span>
+</p>
 
 		<p class=MsoNormal>
 			<span lang=PL style='mso-ansi-language: PL'>&nbsp;<o:p></o:p></span>
