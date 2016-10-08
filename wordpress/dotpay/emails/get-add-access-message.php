@@ -176,7 +176,7 @@ div.WordSection1 {
 		</p>
 
 		<p class=MsoNormal>
-			<span lang=PL style='mso-ansi-language: PL'>Serdecznie dziękujemy za zakup opisu podróży na <a
+			<span lang=PL style='mso-ansi-language: PL'>Serdecznie dziękujemy za zainteresowanie <a
 				href='http://pojade.com.pl/'>pojade.com.pl</a>!<o:p></o:p>
 			</span>
 		</p>
@@ -222,12 +222,9 @@ div.WordSection1 {
 		<p class=MsoNormal>
 			<span lang=PL style='mso-ansi-language: PL'><a href='http://pojade.com.pl/jak-czytac-dalej/#lista'
 				style='font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; word-spacing: 0px'><span
-				lang=PL style='mso-ansi-language: PL'>Na naszej liście</span></a> znajdziesz pzostałe opowiadania - zerknij tam czasem, bo planujemy dodać kolejne.<span style='color: black'><span
+				lang=PL style='mso-ansi-language: PL'>Na naszej liście</span></a> znajdziesz pozostałe opowiadania - zerknij tam czasem, bo planujemy dodać kolejne.<span style='color: black'><span
 					class=apple-converted-space>&nbsp;</span></span>
-			</span></span><span class=apple-converted-space><span lang=PL
-				style='color: black; mso-ansi-language: PL'><span
-					style='font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; widows: 2; -webkit-text-stroke-width: 0px; float: none; word-spacing: 0px'>.</span></span><span
-				lang=PL style='mso-ansi-language: PL'><o:p></o:p></span>
+			</span></span></span>
 		</p>
 
 		<p class=MsoNormal>
