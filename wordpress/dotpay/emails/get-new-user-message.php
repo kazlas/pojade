@@ -138,7 +138,7 @@ href='http://pojade.com.pl/'>pojade.com.pl</a>!</span></p>
 <p class=MsoNormal><span lang=PL>Ufamy, że czytelnicza podróż, w którą właśnie wyruszasz, dostarczy Ci nowej wiedzy, dobrej dawki emocji i świeżej energii do planowania własnych podróży. </span></p>
 
 <p class=MsoNormal><span lang=PL>Mamy nadzieję, że zostaniesz z nami na dłużej – Twoje konto i hasło umożliwi Ci dostęp do kolejnego
-<a href='http://pojade.com.pl/jak-czytac-dalej/#lista'>opowiadania naszej listy</a>,
+<a href='http://pojade.com.pl/jak-czytac-dalej/#lista'>opowiadania z naszej listy</a>,
 jeśli zdecydujesz się na jego zakup.</span></p>
 
 <p class=MsoNormal><span lang=PL>&nbsp;</span></p>

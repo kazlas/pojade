@@ -211,7 +211,7 @@ div.WordSection1 {
 		</p>
 
 		<p class=MsoNormal>
-			<span lang=PL style='mso-ansi-language: PL'>Aby zalogować się i czytać pełną wersją opowiadania użyj swojego konta, do którego hasło przesłaliśmy osobną wiadomością e-mail.<o:p></o:p>
+			<span lang=PL style='mso-ansi-language: PL'>Aby zalogować się i czytać pełną wersję opowiadania użyj swojego konta, do którego hasło przesłaliśmy osobną wiadomością e-mail.<o:p></o:p>
 			</span>
 		</p>
 
